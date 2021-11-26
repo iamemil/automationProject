@@ -19,6 +19,7 @@ public class HomePage {
     private static final By SIGNUP_ERROR = By.xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/ol[1]/li[1]");
     private static final By SEARCH_RESULT_MESSAGE = By.className("heading-counter");
     private static final By SEARCH_RESULT_ERROR = By.xpath("/html/body/div/div[2]/div/div[3]/div[2]/p");
+    private static final By ACCOUNT_INFO = By.className("info-account");
 
 
     @FindBy(className = "login")
@@ -102,6 +103,10 @@ public class HomePage {
 
     public Optional<String> getSearchResultError() {
         return getErrorMessage(SEARCH_RESULT_ERROR);
+    }
+
+    public Optional<String> getAccountInfoMessage() {
+        return getErrorMessage(ACCOUNT_INFO);
     }
 
     public void fillField(String field, String value) {

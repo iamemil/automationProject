@@ -34,4 +34,13 @@ public class LoginStepDefs extends AbstractStepDefs {
     }
 
 
+    @Then("the {string} account info message is shown")
+    public void theWelcomeToYourAccountHereYouCanManageAllOfYourPersonalInformationAndOrdersAccountInfoMessageIsShown(String msg) {
+        Optional<String> errorMessage = homePage.getAccountInfoMessage();
+        if (errorMessage.isPresent()) {
+            Assert.assertEquals(msg, errorMessage.get());
+        } else {
+            fail();
+        }
+    }
 }
