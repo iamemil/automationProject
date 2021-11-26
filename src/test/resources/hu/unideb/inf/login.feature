@@ -4,7 +4,7 @@ Feature: Automation Practice login page
     Given the home page is opened
     And the Sign In link is clicked
 
-    Scenario Outline: Unsuccesful login
+    Scenario Outline: Unsuccessful login
       Given the '<field>' is filled with '<parameter>'
       And the 'passwd' is filled with '<pass>'
       When the Sign In button is clicked
