@@ -21,4 +21,4 @@ Feature: Automation Practice login page
       And the 'passwd' is filled with 'automationpractice'
       When the Sign In button is clicked
       Then the 'Welcome to your account. Here you can manage all of your personal information and orders.' account info message is shown
-
+      Then the Sign Out button is clicked

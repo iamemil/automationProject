@@ -10,6 +10,6 @@ Feature: Automation Practice Sign Up page
       Then the '<msg>' sign up error message is shown
       Examples:
         | parameter         | msg                        |
-        |                   | An email address required. |
+        |                   | Invalid email address.     |
         | invalid.email.com | Invalid email address.     |
         | valid@email.com   | An account using this email address has already been registered. Please enter a valid password or request a new one.|

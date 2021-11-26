@@ -22,7 +22,6 @@ import java.util.concurrent.TimeUnit;
 import static org.junit.Assert.*;
 
 public class LoginStepDefs extends AbstractStepDefs {
-
     @And("the Sign In link is clicked")
     public void theSignInLinkIsClicked() {
         homePage.clickSignInLink();
@@ -33,6 +32,10 @@ public class LoginStepDefs extends AbstractStepDefs {
         homePage.clickSignInButton();
     }
 
+    @Then("the Sign Out button is clicked")
+    public void theSignOutButtonIsClicked() {
+        homePage.clickSignOutButton();
+    }
 
     @Then("the {string} account info message is shown")
     public void theWelcomeToYourAccountHereYouCanManageAllOfYourPersonalInformationAndOrdersAccountInfoMessageIsShown(String msg) {

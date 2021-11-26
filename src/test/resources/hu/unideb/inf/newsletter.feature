@@ -6,9 +6,9 @@ Feature: Automation Practice Newsletter
     Scenario Outline:
       Given the 'newsletter-input' is filled with '<parameter>'
       When the Newsletter button is clicked
-      Then the '<msg>' error message is shown
+      Then the '<msg>' newsletter error message is shown
       Examples:
         | parameter         | msg                        |
-        |                   | Invalid email address.     |
-        | invalid.email.com | Invalid email address.     |
-        | valid@email.com   | This email address is already registered.|
+        |                   | Newsletter : Invalid email address.     |
+        | invalid.email.com | Newsletter : Invalid email address.     |
+        | valid@email.com   | Newsletter : This email address is already registered.|

@@ -1,7 +1,9 @@
 package hu.unideb.inf;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
@@ -13,6 +15,7 @@ import java.util.concurrent.TimeUnit;
 import static org.junit.Assert.fail;
 
 public class CommonStepDefs extends AbstractStepDefs {
+
 
     @Given("the home page is opened")
     public void theHomePageIsOpened() {

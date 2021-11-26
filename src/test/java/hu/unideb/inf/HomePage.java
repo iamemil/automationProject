@@ -20,6 +20,8 @@ public class HomePage {
     private static final By SEARCH_RESULT_MESSAGE = By.className("heading-counter");
     private static final By SEARCH_RESULT_ERROR = By.xpath("/html/body/div/div[2]/div/div[3]/div[2]/p");
     private static final By ACCOUNT_INFO = By.className("info-account");
+    private static final By ORDER_HISTORY_ERROR = By.xpath("/html/body/div/div[2]/div/div[3]/div/div/p");
+    private static final By NEWSLETTER_ERROR = By.xpath("/html/body/div/div[2]/div/p");
 
 
     @FindBy(className = "login")
@@ -46,6 +48,12 @@ public class HomePage {
     @FindBy(id = "submitMessage")
     private WebElement sendButton;
 
+    @FindBy(xpath = "/html/body/div/div[2]/div/div[3]/div/div/div[1]/ul/li[1]/a")
+    private WebElement orderHistoryButton;
+
+    @FindBy(xpath = "/html/body/div/div[1]/header/div[2]/div/div/nav/div[2]/a")
+    private WebElement signOutButton;
+
     private WebDriver driver;
 
     public HomePage(WebDriver driver) {
@@ -69,6 +77,10 @@ public class HomePage {
         signUpButton.click();
     }
 
+    public void clickSignOutButton() {
+        signOutButton.click();
+    }
+
     public void clickCartLink() {
         cartLink.click();
     }
@@ -79,6 +91,10 @@ public class HomePage {
 
     public void clickSearchButton() {
         SearchButton.click();
+    }
+
+    public void clickOrderHistoryButton() {
+        orderHistoryButton.click();
     }
 
     public Optional<String> getLoginError() {
@@ -107,6 +123,13 @@ public class HomePage {
 
     public Optional<String> getAccountInfoMessage() {
         return getErrorMessage(ACCOUNT_INFO);
+    }
+
+    public Optional<String> getOrderHistoryError() {
+        return getErrorMessage(ORDER_HISTORY_ERROR);
+    }
+    public Optional<String> getNewsletterError() {
+        return getErrorMessage(NEWSLETTER_ERROR);
     }
 
     public void fillField(String field, String value) {
